@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday Princess! 🎀</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Your CSS (unchanged for brevity) */
+    :root {
+      --main-color: #fff5f8;
+      --accent-color: #261f22;
+      --text-color: #4d4d4d;
+      --heart-color: #050505;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Quicksand', sans-serif;
+      background: var(--main-color) url('https://www.transparenttextures.com/patterns/heart-wallpaper.png');
+      background-size: cover;
+      color: var(--text-color);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .popup-active .content-wrapper {
+      filter: blur(40px);
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .header {
+      text-align: center;
+      padding: 2rem 1rem 1rem;
+      font-family: 'Pacifico', cursive;
+      font-size: 3rem;
+      color: var(--accent-color);
+      text-shadow: 2px 2px #ffc0cb;
+      position: relative;
+      animation: glitter 3s ease-in-out infinite;
+    }
+
+    @keyframes glitter {
+      0%, 100% { text-shadow: 0 0 10px #ffcce6; }
+      50% { text-shadow: 0 0 20px #ff99cc; }
+    }
+
+    .subtext {
+      text-align: center;
+      font-size: 1.4rem;
+      margin-bottom: 2rem;
+      padding: 0 10vw;
+      color: #151214;
+      font-weight: 600;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 0 5vw 30px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 25px;
+      box-shadow: 0 6px 16px rgba(255, 105, 180, 0.2);
+      border: 5px dotted #ffb6c1;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      position: relative;
+    }
+
+    .card:hover {
+      transform: scale(1.06);
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-bottom: 3px dashed #050505;
+    }
+
+    .caption {
+      padding: 1rem;
+      text-align: center;
+      font-weight: 600;
+      font-size: 1.2rem;
+      color: #181012;
+      background-color: #fff5fa;
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #c27ba0;
+      margin-top: 2rem;
+      padding: 1rem;
+      background-color: #fff0f8;
+      border-top: 3px dashed #f9c5d1;
+      width: 100%;
+    }
+
+    .floating-hearts {
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 2;
+    }
+
+    .heart {
+      width: 20px;
+      height: 20px;
+      background: var(--heart-color);
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-45deg);
+      animation: floatUp 8s linear infinite;
+      opacity: 0.7;
+      border-radius: 50% 50% 50% 0;
+      
+    }
+
+    .heart::after,
+    .heart::before {
+      content: "";
+      width: 20px;
+      height: 20px;
+      background: var(--heart-color);
+      border-radius: 50%;
+      position: absolute;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: 10px;
+      top: 0;
+    }
+
+    @keyframes floatUp {
+      0% {
+        top: 100%;
+        transform: translateX(0) scale(0.5) rotate(0deg);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        top: -10%;
+        transform: translateX(-20px) scale(1.2) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    .sweet-line {
+      font-size: 1.3rem;
+      text-align: center;
+      color: #000000;
+      font-style: italic;
+      margin-bottom: 2rem;
+    }
+
+    html, body {
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        margin-top: 20px;
+      }
+      .gallery {
+        gap: 0;
+      }
+    }
+
+    #popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      border: 4px solid #24181e;
+      border-radius: 15px;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(33, 22, 27, 0.4);
+      z-index: 9999;
+      display: none;
+    }
+
+    #popup h2 {
+      color: #251f21;
+      font-family: 'Pacifico', cursive;
+      margin: 1px 0;
+    }
+
+    #popup button {
+      margin-top: 1rem;
+      background: #1e1b1c;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    #popup button:hover {
+      background: #ff3f99;
+    }
+    #happy-birthday-text {
+  font-size: 3rem;
+  text-align: center;
+  color: #0a0809;
+  font-weight: bold;
+  animation: floatUpDown 2s ease-in-out infinite;
+  position: relative;
+  z-index: 1000;
+}
+
+@keyframes floatUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+  </style>
+</head>
+<body>
+<div class="floating-hearts">
+  <div class="heart" style="left: 10%; animation-delay: 1s;"></div>
+  <div class="heart" style="left: 25%; animation-delay: 2s;"></div>
+  <div class="heart" style="left: 40%; animation-delay: 3s;"></div>
+  <div class="heart" style="left: 60%; animation-delay: 1.5s;"></div>
+  <div class="heart" style="left: 80%; animation-delay: 2.5s;"></div>
+  <div class="heart" style="left: 15%; animation-delay: 4s;"></div>
+  <div class="heart" style="left: 35%; animation-delay: 3.3s;"></div>
+  <div class="heart" style="left: 35%; animation-delay: 3.3s;"></div>
+  <div class="heart" style="left: 35%; animation-delay: 3.3s;"></div>
+  <div class="heart" style="left: 50%; animation-delay: 1.8s;"></div>
+  <div class="heart" style="left: 70%; animation-delay: 2.8s;"></div>
+  <div class="heart" style="left: 90%; animation-delay: 4.5s;"></div>
+  <div class="heart" style="left: 5%; animation-delay: 1.2s;"></div>
+  <div class="heart" style="left: 22%; animation-delay: 2.2s;"></div>
+  <div class="heart" style="left: 38%; animation-delay: 3.7s;"></div>
+  <div class="heart" style="left: 55%; animation-delay: 2s;"></div>
+  <div class="heart" style="left: 72%; animation-delay: 3s;"></div>
+  <div class="heart" style="left: 87%; animation-delay: 4.2s;"></div>
+</div>
+
+  <!-- Popup -->
+  <div id="popup">
+    <h2>Happy</h2>
+    <h2>Birthday</h2>
+    <h2>Bitch!</h2>
+    <p>“May your day be filled with nothing but fake magic (like your personality) and empty sparkles(like your love).”
+
+</p>
+    <button onclick="closePopup()">Thank You!</button>
+  </div>
+
+  <!-- Floating hearts -->
+  <div class="floating-hearts">
+    <!-- (hearts omitted here for brevity — keep yours as-is) -->
+  </div>
+
+  <!-- Audio -->
+  <audio id="bg-music" loop>
+    <source src="jil.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Main content -->
+  <div class="content-wrapper">
+    <div class="header" id="happy-birthday-text"> Happy Birthday Jerk! </div>
+    <div class="subtext">Wishing you cupcakes as fake as your smile, sparkles that burn, and a sky full of fake pink clouds — just like your personality. ☁️✨🙂</div>
+    <div class="sweet-line">You're the reason hearts cringe</div>
+
+    <div class="gallery">
+      <div class="card">
+        <img src="8.jpeg" alt="Girl Photo 1">
+        <div class="caption">You’re sugar, spice & every red flag rolled into one dessert disaster. </div>
+      </div>
+      <div class="card">
+        <img src="9.jpeg" alt="Girl Photo 2">
+        <div class="caption">Sparkle hard just to hide how empty you are.</div>
+      </div>
+      <div class="card">
+        <img src="10.jpeg" alt="Girl Photo 3">
+        <div class="caption">Born to break promises and hearts alike.</div>
+      </div>
+    </div>
+
+    <div class="footer" >
+      Made with fake sprinkles and empty love 🍓 for someone who’s<br> anything but not special 💌<br>
+      Keep glowing like a broken light,  giggling at your own jokes,<br> and fooling everyone  💫
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      // Show popup on page load
+      document.getElementById('popup').style.display = 'block';
+      document.body.classList.add('popup-active');
+    });
+
+    function closePopup() {
+      document.getElementById('popup').style.display = 'none';
+      document.body.classList.remove('popup-active');
+
+      // Play audio on user gesture
+      const audio = document.getElementById('bg-music');
+      audio.muted = false;
+      audio.src = "jil.mp3";  // reassign to force reload
+      audio.load();
+
+      audio.play().catch((err) => {
+        console.log("Audio playback failed:", err);
+      });
+    }
+  </script>
+</body>
+</html>
