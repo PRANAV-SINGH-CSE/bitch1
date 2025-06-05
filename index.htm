@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Happy Birthday Princess! 🎀</title>
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;600&display=swap"
+    rel="stylesheet">
   <style>
     /* Your CSS (unchanged for brevity) */
     :root {
@@ -43,8 +45,15 @@
     }
 
     @keyframes glitter {
-      0%, 100% { text-shadow: 0 0 10px #ffcce6; }
-      50% { text-shadow: 0 0 20px #ff99cc; }
+
+      0%,
+      100% {
+        text-shadow: 0 0 10px #ffcce6;
+      }
+
+      50% {
+        text-shadow: 0 0 20px #ff99cc;
+      }
     }
 
     .subtext {
@@ -128,7 +137,7 @@
       animation: floatUp 8s linear infinite;
       opacity: 0.7;
       border-radius: 50% 50% 50% 0;
-      
+
     }
 
     .heart::after,
@@ -157,9 +166,11 @@
         transform: translateX(0) scale(0.5) rotate(0deg);
         opacity: 0;
       }
+
       50% {
         opacity: 1;
       }
+
       100% {
         top: -10%;
         transform: translateX(-20px) scale(1.2) rotate(360deg);
@@ -175,7 +186,8 @@
       margin-bottom: 2rem;
     }
 
-    html, body {
+    html,
+    body {
       overflow-x: hidden;
       margin: 0;
       padding: 0;
@@ -186,6 +198,7 @@
       .card {
         margin-top: 20px;
       }
+
       .gallery {
         gap: 0;
       }
@@ -226,51 +239,124 @@
     #popup button:hover {
       background: #ff3f99;
     }
+    #popup2 {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      border: 4px solid #24181e;
+      border-radius: 15px;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(33, 22, 27, 0.4);
+      z-index: 9999;
+      display: none;
+    }
+
+    #popup2 h2 {
+      color: #251f21;
+      font-family: 'Pacifico', cursive;
+      margin: 1px 0;
+    }
+
+    #popup2 button {
+      margin-top: 1rem;
+      background: #1e1b1c;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    #popup2 button:hover {
+      background: #ff3f99;
+    }
+    #popup3 {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      border: 4px solid #24181e;
+      border-radius: 15px;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(33, 22, 27, 0.4);
+      z-index: 9999;
+      display: none;
+    }
+
+    #popup3 h2 {
+      color: #251f21;
+      font-family: 'Pacifico', cursive;
+      margin: 1px 0;
+    }
+
+    #popup3 button {
+      margin-top: 1rem;
+      background: #1e1b1c;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    #popup3 button:hover {
+      background: #ff3f99;
+    }
+
     #happy-birthday-text {
-  font-size: 3rem;
-  text-align: center;
-  color: #0a0809;
-  font-weight: bold;
-  animation: floatUpDown 2s ease-in-out infinite;
-  position: relative;
-  z-index: 1000;
-}
+      font-size: 3rem;
+      text-align: center;
+      color: #0a0809;
+      font-weight: bold;
+      animation: floatUpDown 2s ease-in-out infinite;
+      position: relative;
+      z-index: 1000;
+    }
 
-@keyframes floatUpDown {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
+    @keyframes floatUpDown {
+      0% {
+        transform: translateY(0);
+      }
 
+      50% {
+        transform: translateY(-20px);
+      }
+
+      100% {
+        transform: translateY(0);
+      }
+    }
   </style>
 </head>
+
 <body>
-<div class="floating-hearts">
-  <div class="heart" style="left: 10%; animation-delay: 1s;"></div>
-  <div class="heart" style="left: 25%; animation-delay: 2s;"></div>
-  <div class="heart" style="left: 40%; animation-delay: 3s;"></div>
-  <div class="heart" style="left: 60%; animation-delay: 1.5s;"></div>
-  <div class="heart" style="left: 80%; animation-delay: 2.5s;"></div>
-  <div class="heart" style="left: 15%; animation-delay: 4s;"></div>
-  <div class="heart" style="left: 35%; animation-delay: 3.3s;"></div>
-  <div class="heart" style="left: 35%; animation-delay: 3.3s;"></div>
-  <div class="heart" style="left: 35%; animation-delay: 3.3s;"></div>
-  <div class="heart" style="left: 50%; animation-delay: 1.8s;"></div>
-  <div class="heart" style="left: 70%; animation-delay: 2.8s;"></div>
-  <div class="heart" style="left: 90%; animation-delay: 4.5s;"></div>
-  <div class="heart" style="left: 5%; animation-delay: 1.2s;"></div>
-  <div class="heart" style="left: 22%; animation-delay: 2.2s;"></div>
-  <div class="heart" style="left: 38%; animation-delay: 3.7s;"></div>
-  <div class="heart" style="left: 55%; animation-delay: 2s;"></div>
-  <div class="heart" style="left: 72%; animation-delay: 3s;"></div>
-  <div class="heart" style="left: 87%; animation-delay: 4.2s;"></div>
-</div>
+  <div class="floating-hearts">
+    <div class="heart" style="left: 10%; animation-delay: 1s;"></div>
+    <div class="heart" style="left: 25%; animation-delay: 2s;"></div>
+    <div class="heart" style="left: 40%; animation-delay: 3s;"></div>
+    <div class="heart" style="left: 60%; animation-delay: 1.5s;"></div>
+    <div class="heart" style="left: 80%; animation-delay: 2.5s;"></div>
+    <div class="heart" style="left: 15%; animation-delay: 4s;"></div>
+    <div class="heart" style="left: 35%; animation-delay: 3.3s;"></div>
+    <div class="heart" style="left: 35%; animation-delay: 3.3s;"></div>
+    <div class="heart" style="left: 35%; animation-delay: 3.3s;"></div>
+    <div class="heart" style="left: 50%; animation-delay: 1.8s;"></div>
+    <div class="heart" style="left: 70%; animation-delay: 2.8s;"></div>
+    <div class="heart" style="left: 90%; animation-delay: 4.5s;"></div>
+    <div class="heart" style="left: 5%; animation-delay: 1.2s;"></div>
+    <div class="heart" style="left: 22%; animation-delay: 2.2s;"></div>
+    <div class="heart" style="left: 38%; animation-delay: 3.7s;"></div>
+    <div class="heart" style="left: 55%; animation-delay: 2s;"></div>
+    <div class="heart" style="left: 72%; animation-delay: 3s;"></div>
+    <div class="heart" style="left: 87%; animation-delay: 4.2s;"></div>
+  </div>
 
   <!-- Popup -->
   <div id="popup">
@@ -278,10 +364,11 @@
     <h2>Birthday</h2>
     <h2>Bitch!</h2>
     <p>“May your day be filled with nothing but fake magic (like your personality) and empty sparkles(like your love).”
-
-</p>
-    <button onclick="closePopup()">Thank You!</button>
+<br>Have guts to see the whole thing?
+    </p>
+    <button onclick="closePopup()">Click Billi</button>
   </div>
+ 
 
   <!-- Floating hearts -->
   <div class="floating-hearts">
@@ -297,8 +384,10 @@
   <!-- Main content -->
   <div class="content-wrapper">
     <div class="header" id="happy-birthday-text"> Happy Birthday Jerk! </div>
-    <div class="subtext">Wishing you cupcakes as fake as your smile, sparkles that burn, and a sky full of fake pink clouds — just like your personality. ☁️✨🙂</div>
-    <div class="sweet-line">You're the reason hearts cringe<br>May God Bless You That You Never See My Face Again !</div>
+    <div class="subtext">Wishing you cupcakes as fake as your smile, sparkles that burn, and a sky full of fake pink
+      clouds — just like your personality. ☁️✨🙂</div>
+    <div class="sweet-line">You're the reason hearts cringe<br>May God Bless You That You Never See My Face Again !
+    </div>
 
     <div class="gallery">
       <div class="card">
@@ -306,43 +395,110 @@
         <div class="caption">You’re sugar, spice & every red flag rolled into one dessert disaster. </div>
       </div>
       <div class="card">
-        <img src="9.jpeg" alt="Girl Photo 2">
+        <img src="19.png" alt="Girl Photo 2">
         <div class="caption">Sparkle hard just to hide how empty you are.</div>
       </div>
       <div class="card">
-        <img src="10.jpeg" alt="Girl Photo 3">
+        <img src="18.jpg" alt="Girl Photo 3">
+        <div class="caption">You are a masterpiece of chaos.<br><br> Having a heart in eye does not make you a lovable
+          person.<br><br>Thought it will be difficult to forget you but strange it was as easy as Java.</div>
+      </div>
+      <div class="card">
+        <img src="9.jpeg" alt="Girl Photo 4">
+        <div class="caption">You are like a participation certificate(that makes you feel good but if showcased will
+          prove you are a idoit)</div>
+      </div>
+      <div class="card">
+        <img src="10.jpeg" alt="Girl Photo 5">
         <div class="caption">Born to break promises and hearts alike.</div>
       </div>
     </div>
 
-    <div class="footer" >
+    <div class="footer">
       Made with fake sprinkles and empty love 🍓 for someone who’s<br> anything but not special 💌<br>
-      Keep glowing like a broken light,  giggling at your own jokes,<br> and fooling everyone  💫
+      Keep glowing like a broken light, giggling at your own jokes,<br> and fooling everyone 💫
     </div>
   </div>
+  <div id="popup2">
+    <h2>Wanted</h2>
+    <h2>To</h2>
+    <h2>Call you character less!</h2>
+    <p>“Then I remember by mistake I called you my Sister which was too fast which you didn't deserve to be so not able to say that.”
+
+    </p>
+    <button onclick="closePopup2()">Close</button>
+  </div>
+  <div id="popup3" >
+  <h2>Finally these are not just my feelings </h2>
+  <p>This is all your personality traits summed up! Now I know why I got too irritated from you from the starting.</p>
+  <button onclick="closePopup3()">Close</button>
+</div>
+
 
   <!-- Script -->
   <script>
-    window.addEventListener('DOMContentLoaded', function () {
-      // Show popup on page load
-      document.getElementById('popup').style.display = 'block';
+  window.addEventListener('DOMContentLoaded', function () {
+    const popup1 = document.getElementById('popup');
+    if (popup1) {
+      popup1.style.display = 'block';
       document.body.classList.add('popup-active');
-    });
+    }
+  });
 
-    function closePopup() {
-      document.getElementById('popup').style.display = 'none';
+  function closePopup() {
+    const popup1 = document.getElementById('popup');
+    if (popup1) {
+      popup1.style.display = 'none';
       document.body.classList.remove('popup-active');
+    }
 
-      // Play audio on user gesture
-      const audio = document.getElementById('bg-music');
+    // Play audio after closing first popup
+    const audio = document.getElementById('bg-music');
+    if (audio) {
       audio.muted = false;
-      audio.src = "jil.mp3";  // reassign to force reload
       audio.load();
-
       audio.play().catch((err) => {
         console.log("Audio playback failed:", err);
       });
     }
-  </script>
+
+    // After 10 seconds, show second popup
+    setTimeout(() => {
+      const popup2 = document.getElementById('popup2');
+      if (popup2) {
+        popup2.style.display = 'block';
+        document.body.classList.add('popup-active');
+      }
+    }, 10000); // 1 seconds
+  }
+
+  function closePopup2() {
+    const popup2 = document.getElementById('popup2');
+    if (popup2) {
+      popup2.style.display = 'none';
+      document.body.classList.remove('popup-active');
+    }
+
+    // After 5 seconds, show third popup
+    setTimeout(() => {
+      const popup3 = document.getElementById('popup3');
+      if (popup3) {
+        popup3.style.display = 'block';
+        document.body.classList.add('popup-active');
+      }
+    }, 5000); // 5 seconds
+  }
+
+  function closePopup3() {
+    const popup3 = document.getElementById('popup3');
+    if (popup3) {
+      popup3.style.display = 'none';
+      document.body.classList.remove('popup-active');
+    }
+  }
+</script>
+
+
 </body>
+
 </html>
