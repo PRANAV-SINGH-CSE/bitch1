@@ -333,10 +333,46 @@
         transform: translateY(0);
       }
     }
+     #mobile-blocker {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+      text-align: center;
+    }
+
+    #mobile-blocker.active {
+      display: flex;
+    }
+
+    #mobile-blocker h2 {
+      font-size: 2rem;
+      color: whitesmoke;
+      margin-bottom: 1rem;
+    }
+
+    #mobile-blocker p {
+      font-size: 1.25rem;
+            color: whitesmoke;
+
+      max-width: 320px;
+      line-height: 1.4;
+    }
   </style>
 </head>
 
 <body>
+     <div id="mobile-blocker" role="alert" aria-live="assertive" aria-modal="true" tabindex="-1">
+    <h2>Mobile Device Required</h2>
+    <p>This site is only accessible on mobile devices.<br />Please open this site on your phone.</p>
+  </div>
   <div class="floating-hearts">
     <div class="heart" style="left: 10%; animation-delay: 1s;"></div>
     <div class="heart" style="left: 25%; animation-delay: 2s;"></div>
@@ -496,6 +532,33 @@
       document.body.classList.remove('popup-active');
     }
   }
+ // Mobile detection based on screen width
+    function isMobileDevice() {
+      return window.matchMedia("(max-width: 768px)").matches;
+    }
+
+    function showMobileBlocker() {
+      const blocker = document.getElementById('mobile-blocker');
+      blocker.classList.add('active');
+      blocker.focus();
+    }
+
+    function init() {
+      if (!isMobileDevice()) {
+        showMobileBlocker();
+      }
+    }
+
+    window.addEventListener('load', init);
+
+    // Optional: disable keys and other interactions if blocker is shown
+    document.addEventListener('keydown', function (e) {
+      const blocker = document.getElementById('mobile-blocker');
+      if (blocker.classList.contains('active')) {
+        e.preventDefault();
+      }
+    }, true);
+  
 </script>
 
 
